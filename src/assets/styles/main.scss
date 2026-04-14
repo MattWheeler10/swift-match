@@ -1,0 +1,112 @@
+// ─── Global Entry Point ───────────────────────────────────────────────────────
+@use 'reset';
+@use 'variables' as *;
+@use 'typography';
+
+// ─── Layout Utilities ────────────────────────────────────────────────────────
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: $space-8;
+}
+
+.flex         { display: flex; }
+.flex-col     { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.gap-4        { gap: $space-4; }
+.gap-6        { gap: $space-6; }
+.gap-8        { gap: $space-8; }
+
+// ─── Shared Button ────────────────────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  padding: $space-3 $space-8;
+  border-radius: $radius-full;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  transition: all $transition-base;
+  white-space: nowrap;
+
+  &--primary {
+    background: $color-navy;
+    color: $color-white;
+
+    &:hover {
+      background: $color-navy-light;
+      box-shadow: $shadow-md;
+      transform: translateY(-1px);
+    }
+  }
+
+  &--outline {
+    border: 2px solid $color-navy;
+    color: $color-navy;
+
+    &:hover {
+      background: $color-navy;
+      color: $color-white;
+      transform: translateY(-1px);
+    }
+  }
+
+  &--ghost {
+    color: $color-navy;
+
+    &:hover {
+      background: $color-blue-gray-1;
+    }
+  }
+}
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+.card {
+  background: $color-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  padding: $space-8;
+  transition: box-shadow $transition-slow, transform $transition-slow;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+  }
+}
+
+// ─── Tag / Badge ──────────────────────────────────────────────────────────────
+.badge {
+  display: inline-block;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  background: $color-blue-gray-1;
+  color: $color-navy;
+}
+
+// ─── Divider ──────────────────────────────────────────────────────────────────
+.divider {
+  height: 1px;
+  background: $color-border;
+  border: none;
+}
+
+// ─── Page Transitions ─────────────────────────────────────────────────────────
+.page-enter-active,
+.page-leave-active {
+  transition: opacity $transition-base, transform $transition-base;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-12px);
+}
