@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm type-check:*)",
+      "Bash(py --version)",
+      "Bash(where python:*)",
+      "Bash(where py:*)",
+      "Bash(pnpm build:*)",
+      "Bash(claude mcp:*)",
+      "WebFetch(domain:gsap.com)",
+      "Bash(pnpm add:*)"
+    ]
+  }
+}

@@ -1,13 +1,25 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { onMounted, nextTick } from 'vue'
+import { RouterView, useRouter } from 'vue-router'
+import { ScrollTrigger } from '@/directives/reveal'
+import DefaultLayout from '@/components/layout/DefaultLayout.vue'
+
+const router = useRouter()
+
+onMounted(() => {
+  window.scrollTo(0, 0)
+  requestAnimationFrame(() => ScrollTrigger.refresh())
+})
+
+router.afterEach(async () => {
+  await nextTick()
+  window.scrollTo(0, 0)
+  requestAnimationFrame(() => ScrollTrigger.refresh())
+})
 </script>
 
 <template>
-  <RouterView v-slot="{ Component }">
-    <Transition name="page" mode="out-in">
-      <component :is="Component" />
-    </Transition>
-  </RouterView>
+  <DefaultLayout>
+    <RouterView />
+  </DefaultLayout>
 </template>
-
-<style scoped></style>

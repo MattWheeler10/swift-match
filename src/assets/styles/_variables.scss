@@ -1,40 +1,70 @@
 // ─── Colour Palette ──────────────────────────────────────────────────────────
+$color-navy-900:    #0A1733;
 $color-navy:        #112449;
-$color-navy-light:  #1a3460;
+$color-navy-light:  #1E3870;
+$color-navy-ink:    #16284F;
 
-$color-blue-gray-1: #E9EDF1;
-$color-blue-gray-2: #A4B4C4;
+$color-teal:        #14E0C0;   // primary accent — electric / tech
+$color-teal-deep:   #0DB69A;
+$color-teal-soft:   #D6FAF3;
 
-$color-mint-gray:   #F2F5F0;
-$color-soft-gray:   #E6E9EF;
+$color-gold:        #C9922B;   // trust / certification accent — warm, authoritative
+$color-gold-soft:   #FBF3DD;
+$color-gold-deep:   #A6761A;
 
-$color-blush:       #FFF4F4;
+$color-coral:       #E8735F;   // used sparingly for urgency/pressure lines only
+$color-coral-soft:  #FDE8E3;
 
+$color-blue-gray-1: #EEF2F7;
+$color-blue-gray-2: #475569;   // AA-compliant muted text on light bg (≈ 7.6:1 on cream)
+$color-blue-gray-3: #6B7A91;
+
+$color-mint-gray:   #F4F7F3;
+$color-soft-gray:   #E3E8EF;
+
+$color-blush:       #FFF4F2;
 $color-white:       #FFFFFF;
+$color-cream:       #FBFAF7;   // off-white page background
 
 // ─── Semantic Aliases ─────────────────────────────────────────────────────────
 $color-primary:     $color-navy;
+$color-accent:      $color-teal;
+$color-accent-warm: $color-coral;
 $color-surface:     $color-white;
-$color-bg:          $color-blue-gray-1;
+$color-bg:          $color-cream;
 $color-border:      $color-soft-gray;
+$color-border-strong: #CFD6E0;
 $color-text:        $color-navy;
 $color-text-muted:  $color-blue-gray-2;
+$color-text-subtle: $color-blue-gray-3;
+
+// ─── Gradients ───────────────────────────────────────────────────────────────
+$gradient-hero:    radial-gradient(1200px 600px at 10% -10%, rgba($color-teal, 0.14), transparent 60%),
+                   radial-gradient(900px 500px at 95% 110%, rgba($color-gold, 0.12), transparent 55%),
+                   linear-gradient(180deg, #FBFDFF 0%, #EEF2F7 100%);
+$gradient-dark:    linear-gradient(135deg, $color-navy-900 0%, $color-navy 55%, $color-navy-light 100%);
+$gradient-accent:  linear-gradient(135deg, $color-teal 0%, $color-teal-deep 100%);
+$gradient-gold:    linear-gradient(135deg, #E6B047 0%, $color-gold 100%);
+$gradient-card-border: linear-gradient(135deg, rgba($color-teal, 0.5), rgba($color-navy, 0.15));
 
 // ─── Typography ───────────────────────────────────────────────────────────────
-$font-family-base: 'Open Sans', system-ui, sans-serif;
+$font-family-base:    'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+$font-family-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
 
 $font-weight-regular: 400;
-$font-weight-medium:  600;
+$font-weight-medium:  500;
+$font-weight-semibold:600;
 $font-weight-bold:    700;
 
-$font-size-xs:   0.75rem;   // 12px
-$font-size-sm:   0.875rem;  // 14px
-$font-size-base: 1rem;      // 16px
-$font-size-md:   1.125rem;  // 18px
-$font-size-lg:   1.5rem;    // 24px
-$font-size-xl:   2rem;      // 32px
-$font-size-2xl:  2.75rem;   // 44px
-$font-size-3xl:  3.5rem;    // 56px
+$font-size-xs:   0.75rem;   // 12
+$font-size-sm:   0.875rem;  // 14
+$font-size-base: 1rem;      // 16
+$font-size-md:   1.125rem;  // 18
+$font-size-lg:   1.375rem;  // 22
+$font-size-xl:   1.875rem;  // 30
+$font-size-2xl:  2.5rem;    // 40
+$font-size-3xl:  3.25rem;   // 52
+$font-size-4xl:  4.25rem;   // 68 — display metric / hero scale
 
 // ─── Spacing ──────────────────────────────────────────────────────────────────
 $space-1:  0.25rem;
@@ -46,28 +76,35 @@ $space-6:  1.5rem;
 $space-8:  2rem;
 $space-10: 2.5rem;
 $space-12: 3rem;
+$space-14: 3.5rem;
 $space-16: 4rem;
 $space-20: 5rem;
 $space-24: 6rem;
+$space-32: 8rem;
 
 // ─── Border Radius ────────────────────────────────────────────────────────────
 $radius-sm:   6px;
-$radius-md:   12px;
+$radius-md:   14px;
 $radius-lg:   20px;
-$radius-xl:   32px;
+$radius-xl:   28px;
+$radius-2xl:  36px;
 $radius-full: 9999px;
 
 // ─── Shadows ──────────────────────────────────────────────────────────────────
-$shadow-xs:  0 1px 3px rgba($color-navy, 0.06);
-$shadow-sm:  0 2px 8px rgba($color-navy, 0.08);
-$shadow-md:  0 6px 24px rgba($color-navy, 0.12);
-$shadow-lg:  0 16px 48px rgba($color-navy, 0.16);
-$shadow-xl:  0 24px 64px rgba($color-navy, 0.20);
+$shadow-xs:  0 1px 2px rgba($color-navy-900, 0.06);
+$shadow-sm:  0 2px 8px rgba($color-navy-900, 0.06), 0 1px 2px rgba($color-navy-900, 0.04);
+$shadow-md:  0 10px 30px -8px rgba($color-navy-900, 0.15), 0 4px 10px -4px rgba($color-navy-900, 0.08);
+$shadow-lg:  0 24px 60px -12px rgba($color-navy-900, 0.22), 0 8px 20px -8px rgba($color-navy-900, 0.12);
+$shadow-xl:  0 40px 90px -20px rgba($color-navy-900, 0.28);
+$shadow-glow-teal:  0 0 0 1px rgba($color-teal, 0.35), 0 20px 60px -10px rgba($color-teal, 0.35);
+$shadow-glow-coral: 0 0 0 1px rgba($color-coral, 0.3), 0 20px 60px -10px rgba($color-coral, 0.3);
+$shadow-inset:      inset 0 1px 0 rgba($color-white, 0.06);
 
 // ─── Transitions ──────────────────────────────────────────────────────────────
 $transition-fast:   150ms ease;
 $transition-base:   250ms ease;
 $transition-slow:   400ms cubic-bezier(0.23, 1, 0.32, 1);
+$ease-smooth:       cubic-bezier(0.23, 1, 0.32, 1);
 
 // ─── Z-index ──────────────────────────────────────────────────────────────────
 $z-base:    0;

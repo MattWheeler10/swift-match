@@ -3,110 +3,274 @@
 @use 'variables' as *;
 @use 'typography';
 
-// ─── Layout Utilities ────────────────────────────────────────────────────────
+// ─── Container ───────────────────────────────────────────────────────────────
 .container {
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: $space-8;
+
+  @media (max-width: 640px) { padding-inline: $space-5; }
 }
 
-.flex         { display: flex; }
-.flex-col     { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.gap-4        { gap: $space-4; }
-.gap-6        { gap: $space-6; }
-.gap-8        { gap: $space-8; }
+// ─── Sections ────────────────────────────────────────────────────────────────
+.section {
+  position: relative;
+  padding-block: $space-24;
 
-// ─── Shared Button ────────────────────────────────────────────────────────────
+  @media (max-width: 768px) { padding-block: $space-16; }
+
+  &--alt {
+    background: linear-gradient(180deg, $color-mint-gray 0%, #EDF1EE 100%);
+  }
+
+  &--dark {
+    background: $gradient-dark;
+    color: $color-white;
+
+    h1, h2, h3, h4 { color: $color-white; }
+  }
+}
+
+// ─── Grids ───────────────────────────────────────────────────────────────────
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-8;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $space-6;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+
+.four-col {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $space-5;
+
+  @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
+}
+
+// ─── Flow (step chain) ───────────────────────────────────────────────────────
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3;
+
+  .flow__step {
+    position: relative;
+    padding: $space-3 $space-5;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-full;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-navy;
+    box-shadow: $shadow-xs;
+    transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-sm;
+      border-color: rgba($color-teal, 0.5);
+    }
+  }
+
+  .flow__arrow {
+    color: $color-teal-deep;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-md;
+  }
+}
+
+// ─── Eyebrow ─────────────────────────────────────────────────────────────────
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $color-teal-deep;
+  margin: 0;
+
+  &::before {
+    content: '';
+    width: 28px;
+    height: 2px;
+    background: $gradient-accent;
+    border-radius: $radius-full;
+  }
+
+  .section--dark & {
+    color: $color-teal;
+    &::before { background: $color-teal; }
+  }
+}
+
+// ─── Buttons ─────────────────────────────────────────────────────────────────
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: $space-2;
-  padding: $space-3 $space-8;
+  padding: $space-4 $space-8;
   border-radius: $radius-full;
-  font-weight: $font-weight-medium;
-  font-size: $font-size-base;
-  transition: all $transition-base;
+  font-family: $font-family-base;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-sm;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform $transition-base, box-shadow $transition-base, background $transition-base, color $transition-base, border-color $transition-base;
   white-space: nowrap;
 
   &--primary {
     background: $color-navy;
     color: $color-white;
+    box-shadow: $shadow-sm, $shadow-inset;
 
     &:hover {
       background: $color-navy-light;
-      box-shadow: $shadow-md;
-      transform: translateY(-1px);
+      box-shadow: $shadow-md, $shadow-inset;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--accent {
+    background: $gradient-accent;
+    color: $color-navy-900;
+    box-shadow: $shadow-glow-teal;
+
+    &:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
     }
   }
 
   &--outline {
-    border: 2px solid $color-navy;
+    border-color: rgba($color-navy, 0.25);
     color: $color-navy;
+    background: transparent;
 
     &:hover {
-      background: $color-navy;
+      border-color: $color-navy;
+      background: rgba($color-navy, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .section--dark & {
+      border-color: rgba($color-white, 0.35);
       color: $color-white;
-      transform: translateY(-1px);
+      &:hover { border-color: $color-white; background: rgba($color-white, 0.08); }
     }
   }
 
   &--ghost {
     color: $color-navy;
+    background: transparent;
 
     &:hover {
-      background: $color-blue-gray-1;
+      background: rgba($color-navy, 0.06);
     }
   }
 }
 
-// ─── Card ─────────────────────────────────────────────────────────────────────
+// ─── Card ────────────────────────────────────────────────────────────────────
 .card {
+  position: relative;
   background: $color-white;
+  border: 1px solid $color-border;
   border-radius: $radius-lg;
-  box-shadow: $shadow-sm;
   padding: $space-8;
-  transition: box-shadow $transition-slow, transform $transition-slow;
+  box-shadow: $shadow-xs;
+  transition: transform $transition-slow, box-shadow $transition-slow, border-color $transition-slow;
 
   &:hover {
-    box-shadow: $shadow-lg;
     transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+    border-color: rgba($color-teal, 0.4);
   }
 }
 
-// ─── Tag / Badge ──────────────────────────────────────────────────────────────
+// Gradient-border card — an elevated visual treatment for key cards
+.card--elevated {
+  border: 1px solid transparent;
+  background:
+    linear-gradient($color-white, $color-white) padding-box,
+    $gradient-card-border border-box;
+}
+
+.card--dark {
+  background: rgba($color-white, 0.04);
+  border: 1px solid rgba($color-white, 0.12);
+  color: $color-white;
+  backdrop-filter: blur(8px);
+
+  h3 { color: $color-white; }
+  p  { color: rgba($color-white, 0.75); }
+
+  &:hover { border-color: rgba($color-teal, 0.6); }
+}
+
+// ─── Badge ───────────────────────────────────────────────────────────────────
 .badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
   padding: $space-1 $space-3;
   border-radius: $radius-full;
   font-size: $font-size-xs;
-  font-weight: $font-weight-medium;
-  background: $color-blue-gray-1;
-  color: $color-navy;
+  font-weight: $font-weight-semibold;
+  background: $color-teal-soft;
+  color: $color-teal-deep;
+  border: 1px solid rgba($color-teal, 0.25);
 }
 
-// ─── Divider ──────────────────────────────────────────────────────────────────
+// ─── Divider ─────────────────────────────────────────────────────────────────
 .divider {
   height: 1px;
   background: $color-border;
   border: none;
+  margin-block: $space-12;
 }
 
-// ─── Page Transitions ─────────────────────────────────────────────────────────
+// ─── Focus Rings (keyboard a11y) ─────────────────────────────────────────────
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid $color-teal-deep;
+  outline-offset: 3px;
+  border-radius: $radius-sm;
+}
+.btn:focus-visible {
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px rgba($color-teal, 0.25);
+}
+
+// ─── Reduced Motion ──────────────────────────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ─── Page Transitions ────────────────────────────────────────────────────────
 .page-enter-active,
 .page-leave-active {
   transition: opacity $transition-base, transform $transition-base;
 }
-
-.page-enter-from {
-  opacity: 0;
-  transform: translateY(12px);
-}
-
-.page-leave-to {
-  opacity: 0;
-  transform: translateY(-12px);
-}
+.page-enter-from { opacity: 0; transform: translateY(12px); }
+.page-leave-to   { opacity: 0; transform: translateY(-8px); }
