@@ -67,6 +67,7 @@ const defaults = [
     padding: 0; margin: 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    align-items: stretch;
     gap: $space-4;
 
     @media (max-width: 1024px) { grid-template-columns: repeat(3, 1fr); }

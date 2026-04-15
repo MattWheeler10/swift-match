@@ -8,7 +8,9 @@
       "Bash(pnpm build:*)",
       "Bash(claude mcp:*)",
       "WebFetch(domain:gsap.com)",
-      "Bash(pnpm add:*)"
+      "Bash(pnpm add:*)",
+      "mcp__magic__21st_magic_component_inspiration",
+      "Bash(npm run *)"
     ]
   }
 }

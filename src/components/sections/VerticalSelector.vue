@@ -72,6 +72,7 @@ const { headline, subheadline } = globalHome.verticalSelector
   color: $color-text;
   min-height: 260px;
   overflow: hidden;
+  position: relative;
 
   &::after {
     content: '';

@@ -5,8 +5,8 @@ import SiteFooter from './SiteFooter.vue'
 
 <template>
   <div class="default-layout">
-    <SiteHeader />
     <main class="default-layout__main">
+      <SiteHeader />
       <slot />
     </main>
     <SiteFooter />
@@ -19,6 +19,8 @@ import SiteFooter from './SiteFooter.vue'
   flex-direction: column;
   min-height: 100vh;
 
-  &__main { flex: 1; }
+  &__main {
+    flex: 1;
+  }
 }
 </style>

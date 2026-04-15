@@ -33,7 +33,7 @@ onMounted(() => {
       stagger: 0.12,
       scrollTrigger: {
         trigger: gridRef.value,
-        start: 'top 70%',
+        start: 'top 80%',
         once: true,
       },
     })
@@ -45,14 +45,16 @@ onMounted(() => {
       stagger: 0.12,
       scrollTrigger: {
         trigger: gridRef.value,
-        start: 'top 70%',
+        start: 'top 80%',
         once: true,
       },
     })
   }, gridRef.value)
 })
 
-onBeforeUnmount(() => { ctx?.revert() })
+onBeforeUnmount(() => {
+  ctx?.revert()
+})
 </script>
 
 <template>
@@ -80,8 +82,12 @@ onBeforeUnmount(() => { ctx?.revert() })
   overflow: hidden;
   border: 1px solid $color-border;
 
-  @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 480px) { grid-template-columns: 1fr; }
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .proof-metric {
@@ -96,8 +102,10 @@ onBeforeUnmount(() => { ctx?.revert() })
   &::before {
     content: '';
     position: absolute;
-    left: 0; top: 0;
-    width: 100%; height: 3px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
     background: $gradient-accent;
     transform: scaleX(0);
     transform-origin: left;
@@ -105,8 +113,10 @@ onBeforeUnmount(() => { ctx?.revert() })
   }
 
   &:hover {
-    background: #FDFFFE;
-    &::before { transform: scaleX(1); }
+    background: #fdfffe;
+    &::before {
+      transform: scaleX(1);
+    }
   }
 
   &__value {
@@ -118,7 +128,7 @@ onBeforeUnmount(() => { ctx?.revert() })
     color: $color-navy-900;
     background: linear-gradient(180deg, $color-navy 0%, $color-navy-light 100%);
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -130,7 +140,10 @@ onBeforeUnmount(() => { ctx?.revert() })
   }
 }
 
-.proof-supporting { color: $color-text-muted; max-width: 720px; }
+.proof-supporting {
+  color: $color-text-muted;
+  max-width: 720px;
+}
 .proof-pressure {
   font-weight: $font-weight-semibold;
   color: $color-navy;

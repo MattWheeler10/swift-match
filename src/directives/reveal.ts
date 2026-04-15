@@ -23,8 +23,7 @@ interface RevealEl extends HTMLElement {
 }
 
 const prefersReducedMotion = () =>
-  typeof window !== 'undefined' &&
-  window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 function resolveOpts(binding: DirectiveBinding<RevealValue>) {
   const v = binding.value
@@ -33,7 +32,7 @@ function resolveOpts(binding: DirectiveBinding<RevealValue>) {
     y: 32,
     stagger: 0.1,
     duration: 0.8,
-    start: 'top 70%',
+    start: 'top 90%',
     delay: 0,
   }
   if (typeof v === 'string') return { ...base, selector: v }
@@ -51,7 +50,7 @@ export const vReveal: Directive<RevealEl, RevealValue> = {
     const targets = opts.selector
       ? Array.from(el.querySelectorAll<HTMLElement>(opts.selector))
       : stagger
-        ? Array.from(el.children) as HTMLElement[]
+        ? (Array.from(el.children) as HTMLElement[])
         : [el]
 
     if (!targets.length) return

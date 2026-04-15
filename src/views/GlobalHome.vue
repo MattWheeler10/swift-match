@@ -11,7 +11,6 @@ import TransformationPathway from '@/components/sections/TransformationPathway.v
 import ProofMetrics from '@/components/sections/ProofMetrics.vue'
 import PilotBlock from '@/components/sections/PilotBlock.vue'
 import FinalCTA from '@/components/sections/FinalCTA.vue'
-import ComplianceStrip from '@/components/sections/ComplianceStrip.vue'
 import { RouterLink } from 'vue-router'
 import { globalHome } from '@/content/global-home'
 
@@ -30,8 +29,6 @@ const g = globalHome
       <WorkflowFlow :steps="g.hero.workflow.steps" :label="g.hero.workflow.label" />
     </template>
   </HeroSection>
-
-  <ComplianceStrip />
 
   <VerticalSelector />
 
