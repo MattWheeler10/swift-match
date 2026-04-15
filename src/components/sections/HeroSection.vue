@@ -18,6 +18,7 @@ defineProps<{
     <div class="hero__bg" aria-hidden="true">
       <span class="hero__orb hero__orb--teal" />
       <span class="hero__orb hero__orb--coral" />
+      <span class="hero__orb hero__orb--gold" />
       <div class="hero__grid-lines" />
       <div class="hero__noise" />
     </div>
@@ -91,30 +92,45 @@ defineProps<{
     position: absolute;
     border-radius: 50%;
     filter: blur(90px);
-    opacity: 0.55;
-    will-change: transform;
+    will-change: transform, opacity;
 
     &--teal {
-      width: 560px; height: 560px;
+      width: 600px; height: 600px;
       background: radial-gradient(circle, $color-teal 0%, transparent 65%);
-      top: -180px; left: -140px;
-      animation: orbDriftA 18s ease-in-out infinite;
+      top: -200px; left: -160px;
+      opacity: 0.6;
+      animation: orbDriftA 16s ease-in-out infinite;
     }
     &--coral {
-      width: 460px; height: 460px;
+      width: 480px; height: 480px;
       background: radial-gradient(circle, $color-coral 0%, transparent 65%);
-      bottom: -180px; right: -100px;
-      animation: orbDriftB 22s ease-in-out infinite;
+      bottom: -180px; right: -80px;
+      opacity: 0.5;
+      animation: orbDriftB 20s ease-in-out infinite;
+    }
+    &--gold {
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, $color-gold 0%, transparent 65%);
+      top: 30%; left: 35%;
+      opacity: 0.22;
+      animation: orbDriftC 26s ease-in-out infinite;
     }
   }
 
   @keyframes orbDriftA {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(60px, 40px) scale(1.08); }
+    0%, 100% { transform: translate(0, 0) scale(1);    opacity: 0.6; }
+    30%       { transform: translate(80px, 55px) scale(1.15); opacity: 0.75; }
+    65%       { transform: translate(20px, 90px) scale(0.92); opacity: 0.42; }
   }
   @keyframes orbDriftB {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-40px, -30px) scale(1.05); }
+    0%, 100% { transform: translate(0, 0) scale(1);      opacity: 0.5; }
+    35%       { transform: translate(-65px, -55px) scale(1.12); opacity: 0.68; }
+    70%       { transform: translate(-15px, 30px) scale(0.88);  opacity: 0.38; }
+  }
+  @keyframes orbDriftC {
+    0%, 100% { transform: translate(0, 0) scale(1);      opacity: 0.22; }
+    40%       { transform: translate(50px, -60px) scale(1.2);   opacity: 0.32; }
+    75%       { transform: translate(-40px, 40px) scale(0.85);  opacity: 0.14; }
   }
 
   &__grid {
@@ -183,16 +199,22 @@ defineProps<{
     100% { opacity: 0; transform: scale(1.7); }
   }
 
-  // ─── Headline with subtle gradient accent ─────────────────────
+  // ─── Headline — deep navy into teal so the final phrase pops ──
   &__headline {
-    font-size: clamp(2.5rem, 5vw + 0.5rem, 4.25rem);
+    font-size: clamp(2.6rem, 5.5vw + 0.4rem, 4.5rem);
     color: $color-navy-900;
     margin: 0;
-    letter-spacing: -0.025em;
-    line-height: 1.05;
-
-    // Gradient wash on last word for interest (non-intrusive)
-    background: linear-gradient(135deg, $color-navy-900 0%, $color-navy 55%, $color-navy-light 100%);
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    font-weight: $font-weight-bold;
+    background: linear-gradient(
+      120deg,
+      $color-navy-900  0%,
+      $color-navy-900  28%,
+      $color-navy      50%,
+      $color-teal-deep 72%,
+      $color-teal      100%
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

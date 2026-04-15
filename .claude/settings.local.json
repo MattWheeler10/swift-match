@@ -10,7 +10,9 @@
       "WebFetch(domain:gsap.com)",
       "Bash(pnpm add:*)",
       "mcp__magic__21st_magic_component_inspiration",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"healthcare staffing SaaS landing page CTA sector selector\" --design-system -p \"SwiftMatch\" -f markdown)",
+      "Bash(py skills/ui-ux-pro-max/scripts/search.py \"healthcare staffing SaaS landing page CTA sector selector\" --design-system -p \"SwiftMatch\" -f markdown)"
     ]
   }
 }
