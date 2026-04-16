@@ -102,11 +102,19 @@ const icons: string[] = [
   }
 
   &__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: $space-6;
+    align-items: stretch;
 
-    @media (max-width: 900px) { grid-template-columns: 1fr; }
+    > * {
+      flex: 1 1 0;
+      min-width: 0; // prevent text overflow breaking layout
+    }
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      > * { flex: none; }
+    }
   }
 }
 

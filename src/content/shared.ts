@@ -1,7 +1,7 @@
 import type { NavLink, VerticalCard, CTA } from './types'
 
 export const brand = {
-  name: 'SwiftMatch Workforce',
+  name: 'SwiftMatch Technologies',
   shortName: 'SwiftMatch',
 }
 

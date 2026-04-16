@@ -30,16 +30,31 @@ defineProps<{
 @use '@/assets/styles/variables' as *;
 
 .problem-list {
-  list-style: disc inside;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
   gap: $space-3;
   padding: 0;
   margin: 0;
 
-  @media (max-width: 768px) { grid-template-columns: 1fr; }
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-3;
+    font-size: $font-size-md;
+    line-height: 1.55;
+    color: $color-text;
 
-  li { color: $color-text; }
+    &::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $color-teal-deep;
+      flex-shrink: 0;
+      margin-top: 0.44em;
+    }
+  }
 }
 
 .problem-supporting {

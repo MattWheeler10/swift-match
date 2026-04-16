@@ -46,7 +46,7 @@ import { pilot as p } from '@/content/pilot'
   </SectionBlock>
 
   <SectionBlock :headline="p.kpis.headline" alt>
-    <ul class="bullets two-col-list">
+    <ul class="bullets">
       <li v-for="k in p.kpis.items" :key="k">{{ k }}</li>
     </ul>
     <p class="key-line">{{ p.kpis.keyLine }}</p>
@@ -79,21 +79,6 @@ import { pilot as p } from '@/content/pilot'
 @use '@/assets/styles/variables' as *;
 
 .stack { display: flex; flex-direction: column; gap: $space-3; }
-.bullets {
-  list-style: disc inside;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: $space-2;
-}
-.two-col-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: $space-2 $space-6;
-
-  @media (max-width: 768px) { grid-template-columns: 1fr; }
-}
 .muted { color: $color-text-muted; }
 .key-line {
   padding: $space-4;

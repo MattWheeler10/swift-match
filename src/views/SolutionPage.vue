@@ -85,14 +85,6 @@ import { solution as s } from '@/content/solution'
 @use '@/assets/styles/variables' as *;
 
 .lead { font-size: $font-size-md; color: $color-navy; font-weight: $font-weight-medium; }
-.bullets {
-  list-style: disc inside;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: $space-2;
-}
 .key-line {
   padding: $space-4;
   background: $color-white;

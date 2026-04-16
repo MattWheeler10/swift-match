@@ -58,7 +58,7 @@ defineProps<{
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: $space-24 $space-24;
+  padding-block: 10rem;
   background: $gradient-hero;
   isolation: isolate;
 
@@ -136,8 +136,8 @@ defineProps<{
   &__grid {
     position: relative;
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: $space-16;
+    grid-template-columns: 1.45fr 0.8fr;
+    gap: $space-20;
     align-items: center;
 
     @media (max-width: 900px) { grid-template-columns: 1fr; gap: $space-12; }
@@ -276,48 +276,18 @@ defineProps<{
   // ─── Visual frame ─────────────────────────────────────────────
   &__visual {
     position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
   }
 
   &__visual-frame {
-    position: relative;
-    padding: $space-6;
-    background: rgba($color-white, 0.65);
-    border: 1px solid rgba($color-navy, 0.08);
-    border-radius: $radius-xl;
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: $shadow-lg;
-    transition: transform $transition-slow, box-shadow $transition-slow;
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-xl;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: $radius-xl;
-      padding: 1px;
-      background: $gradient-card-border;
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-      pointer-events: none;
-    }
+    width: 100%;
+    padding: $space-4 0;
   }
 
   &__visual-glow {
-    position: absolute;
-    inset: -20px;
-    background: radial-gradient(60% 60% at 50% 50%, rgba($color-teal, 0.22) 0%, transparent 70%);
-    filter: blur(40px);
-    z-index: -1;
-    opacity: 0.8;
-    pointer-events: none;
+    display: none;
   }
 
   @media (prefers-reduced-motion: reduce) {

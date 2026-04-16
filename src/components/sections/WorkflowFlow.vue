@@ -2,12 +2,13 @@
 defineProps<{
   steps: string[]
   label?: string
+  vertical?: boolean
 }>()
 </script>
 
 <template>
   <div class="workflow-flow">
-    <ol v-reveal.stagger="{ stagger: 0.07, y: 14 }" class="workflow-flow__steps">
+    <ol v-reveal.stagger="{ stagger: 0.07, y: 14 }" class="workflow-flow__steps" :class="{ 'workflow-flow__steps--vertical': vertical }">
       <li
         v-for="(step, i) in steps"
         :key="step"
@@ -20,8 +21,12 @@ defineProps<{
     </ol>
     <p v-if="label" class="workflow-flow__caption">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-        <path d="M7 1.5L8.4 5.5h4.1L9.2 7.7l1.2 3.8L7 9.3l-3.4 2.2 1.2-3.8L1.5 5.5h4.1L7 1.5z"
-          stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+        <path
+          d="M7 1.5L8.4 5.5h4.1L9.2 7.7l1.2 3.8L7 9.3l-3.4 2.2 1.2-3.8L1.5 5.5h4.1L7 1.5z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
       </svg>
       {{ label }}
     </p>
@@ -40,10 +45,31 @@ defineProps<{
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: baseline;
     gap: $space-2;
+
+    &--vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      flex-wrap: nowrap;
+      gap: $space-2;
+
+      .workflow-flow__step {
+        width: 100%;
+        border-radius: $radius-md;
+        padding: $space-3 $space-4 $space-3 $space-3;
+        background: $color-white;
+        border-color: $color-soft-gray;
+        box-shadow: $shadow-xs;
+      }
+
+      .workflow-flow__label {
+        white-space: normal;
+      }
+    }
   }
 
   &__step {
@@ -54,7 +80,10 @@ defineProps<{
     background: $color-blue-gray-1;
     border: 1px solid $color-soft-gray;
     border-radius: $radius-full;
-    transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+    transition:
+      transform $transition-base,
+      box-shadow $transition-base,
+      border-color $transition-base;
 
     &:hover {
       transform: translateY(-2px);
@@ -75,7 +104,9 @@ defineProps<{
         font-weight: $font-weight-bold;
       }
 
-      &:hover { border-color: $color-teal-deep; }
+      &:hover {
+        border-color: $color-teal-deep;
+      }
     }
   }
 
@@ -83,7 +114,8 @@ defineProps<{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 26px; height: 26px;
+    width: 26px;
+    height: 26px;
     flex-shrink: 0;
     font-family: $font-family-display;
     font-size: 0.7rem;
@@ -124,9 +156,16 @@ defineProps<{
       }
     }
 
-    &__index { background: rgba($color-teal, 0.25); color: $color-teal; }
-    &__label { color: rgba($color-white, 0.9); }
-    &__caption { color: $color-teal; }
+    &__index {
+      background: rgba($color-teal, 0.25);
+      color: $color-teal;
+    }
+    &__label {
+      color: rgba($color-white, 0.9);
+    }
+    &__caption {
+      color: $color-teal;
+    }
   }
 }
 </style>

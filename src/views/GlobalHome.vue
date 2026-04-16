@@ -26,7 +26,7 @@ const g = globalHome
     :ctas="g.hero.ctas"
   >
     <template #visual>
-      <WorkflowFlow :steps="g.hero.workflow.steps" :label="g.hero.workflow.label" />
+      <WorkflowFlow :steps="g.hero.workflow.steps" :label="g.hero.workflow.label" vertical />
     </template>
   </HeroSection>
 

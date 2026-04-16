@@ -56,19 +56,25 @@ export const vReveal: Directive<RevealEl, RevealValue> = {
     if (!targets.length) return
 
     el.__revealCtx = gsap.context(() => {
-      gsap.from(targets, {
-        y: opts.y,
-        opacity: 0,
-        duration: opts.duration,
-        ease: 'power3.out',
-        stagger: stagger ? opts.stagger : 0,
-        delay: opts.delay,
-        scrollTrigger: {
-          trigger: el,
-          start: opts.start,
-          once: true,
+      gsap.fromTo(
+        targets,
+        { y: opts.y, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: opts.duration,
+          ease: 'power3.out',
+          stagger: stagger ? opts.stagger : 0,
+          delay: opts.delay,
+          clearProps: 'transform,opacity',
+          scrollTrigger: {
+            trigger: el,
+            start: opts.start,
+            once: true,
+            invalidateOnRefresh: true,
+          },
         },
-      })
+      )
     }, el)
   },
   unmounted(el) {

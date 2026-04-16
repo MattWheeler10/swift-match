@@ -117,14 +117,6 @@ import { platform as p } from '@/content/platform'
 <style scoped lang="scss">
 @use '@/assets/styles/variables' as *;
 
-.bullets {
-  list-style: disc inside;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: $space-2;
-}
 .stack { display: flex; flex-direction: column; gap: $space-3; }
 .muted { color: $color-text-muted; }
 .key-line {

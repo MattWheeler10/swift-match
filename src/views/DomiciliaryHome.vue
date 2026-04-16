@@ -26,7 +26,7 @@ const h = domiciliaryCareHome
     :ctas="h.hero.ctas"
   >
     <template #visual>
-      <WorkflowFlow :steps="h.hero.workflow.steps" :label="h.hero.workflow.label" />
+      <WorkflowFlow :steps="h.hero.workflow.steps" :label="h.hero.workflow.label" vertical />
     </template>
   </HeroSection>
 

@@ -88,14 +88,6 @@ import { howItWorks as h } from '@/content/how-it-works'
 @use '@/assets/styles/variables' as *;
 
 .muted { color: $color-text-muted; }
-.bullets {
-  list-style: disc inside;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: $space-2;
-}
 .key-line {
   padding: $space-4;
   background: $color-white;
