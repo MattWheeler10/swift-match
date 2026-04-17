@@ -21,7 +21,7 @@ defineProps<{
     </div>
     <p v-if="closingLine" class="problem-closing">{{ closingLine }}</p>
     <RouterLink v-if="link" :to="link.to" class="btn btn--ghost problem-link">
-      {{ link.label }} →
+      {{ link.label }} <svg class="btn__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
     </RouterLink>
   </SectionBlock>
 </template>
@@ -62,6 +62,14 @@ defineProps<{
   flex-direction: column;
   gap: $space-3;
   color: $color-text-muted;
+
+  p {
+    font-size: $font-size-md;
+
+    @media (min-width: 1024px) {
+      font-size: 1.125rem; // 18px
+    }
+  }
 }
 
 .problem-closing {

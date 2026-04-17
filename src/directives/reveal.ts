@@ -32,7 +32,7 @@ function resolveOpts(binding: DirectiveBinding<RevealValue>) {
     y: 32,
     stagger: 0.1,
     duration: 0.8,
-    start: 'top 90%',
+    start: 'top 80%',
     delay: 0,
   }
   if (typeof v === 'string') return { ...base, selector: v }

@@ -16,9 +16,9 @@
 // ─── Sections ────────────────────────────────────────────────────────────────
 .section {
   position: relative;
-  padding-block: $space-24;
+  padding-block: $space-16;
 
-  @media (max-width: 768px) { padding-block: $space-16; }
+  @media (max-width: 768px) { padding-block: $space-12; }
 
   &--alt {
     background: linear-gradient(180deg, $color-mint-gray 0%, #EDF1EE 100%);
@@ -185,6 +185,17 @@
       background: rgba($color-navy, 0.05);
       border-color: rgba($color-navy, 0.4);
     }
+  }
+
+  .btn__caret {
+    display: inline-block;
+    flex-shrink: 0;
+    transition: transform $transition-base;
+    vertical-align: middle;
+  }
+
+  &:hover .btn__caret {
+    transform: translateX(4px);
   }
 }
 

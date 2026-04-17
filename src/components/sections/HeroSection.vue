@@ -23,7 +23,7 @@ defineProps<{
       <div class="hero__noise" />
     </div>
 
-    <div class="container hero__grid">
+    <div class="container hero__grid" :class="{ 'hero__grid--full': !$slots.visual }">
       <div v-reveal.stagger="{ y: 24, stagger: 0.08, start: 'top 99%', delay: 0.1 }" class="hero__content">
         <div v-if="eyebrow" class="hero__badge">
           <span class="hero__badge-dot" aria-hidden="true" />
@@ -141,6 +141,12 @@ defineProps<{
     align-items: center;
 
     @media (max-width: 900px) { grid-template-columns: 1fr; gap: $space-12; }
+
+    &--full {
+      grid-template-columns: 1fr;
+
+      .hero__content { max-width: 820px; }
+    }
   }
 
   &__content {
@@ -222,14 +228,14 @@ defineProps<{
 
   &__subheadline {
     font-size: $font-size-md;
-    color: $color-navy-ink;
+    color: #112449;
     max-width: 560px;
     line-height: 1.55;
   }
 
   &__supporting {
     font-size: $font-size-base;
-    color: $color-text-muted;
+    color: #112449;
     max-width: 560px;
     line-height: 1.6;
   }

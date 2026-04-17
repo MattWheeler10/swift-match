@@ -19,7 +19,7 @@ defineProps<{
         <span>Video placeholder</span>
       </div>
 
-      <CtaButtons v-if="ctas" :ctas="ctas" />
+      <CtaButtons v-if="ctas" :ctas="ctas" class="platform-video__ctas" />
     </div>
   </section>
 </template>
@@ -45,6 +45,26 @@ defineProps<{
     max-width: 700px;
     opacity: 0.8;
     margin: 0;
+  }
+
+  &__ctas {
+    :deep(.btn--primary) {
+      background: $color-white;
+      color: $color-navy-900;
+      &:hover {
+        background: rgba($color-white, 0.92);
+        box-shadow: $shadow-md;
+      }
+    }
+
+    :deep(.btn--outline) {
+      border-color: rgba($color-white, 0.45);
+      color: $color-white;
+      &:hover {
+        border-color: $color-white;
+        background: rgba($color-white, 0.1);
+      }
+    }
   }
 
   &__frame {

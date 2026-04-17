@@ -42,7 +42,7 @@ defineProps<{
 
     <div v-if="links?.length" class="solution-links">
       <RouterLink v-for="l in links" :key="l.to" :to="l.to" class="btn btn--ghost">
-        {{ l.label }} →
+        {{ l.label }} <svg class="btn__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </RouterLink>
     </div>
   </SectionBlock>
@@ -56,20 +56,40 @@ defineProps<{
   max-width: 820px;
 }
 
+// ─── Numbered Steps ──────────────────────────────────────────────────────────
 .solution-steps {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: $space-6;
 
   &__item {
     display: flex;
-    gap: $space-4;
+    gap: $space-5;
+    position: relative;
+    padding-bottom: $space-8;
 
-    h3 { color: $color-navy; margin: 0 0 $space-2; font-size: $font-size-md; }
-    p { margin: 0; color: $color-text; }
+    // Connector line between steps
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px; // centre of the 40px badge
+      top: 42px;
+      bottom: 0;
+      width: 1px;
+      background: rgba($color-navy, 0.12);
+    }
+
+    &:last-child { padding-bottom: 0; }
+
+    h3 {
+      color: $color-navy;
+      margin: 0 0 $space-1;
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+    }
+    p { margin: 0; color: $color-text; line-height: 1.6; }
   }
 
   &__num {
@@ -83,9 +103,39 @@ defineProps<{
     align-items: center;
     justify-content: center;
     font-weight: $font-weight-bold;
+    position: relative;
+    z-index: 1;
   }
 }
 
+// ─── Two-column info panels (non-interactive) ─────────────────────────────────
+.solution-two-col {
+  .card {
+    border: none;
+    border-left: 3px solid $color-teal-deep;
+    border-radius: 0;
+    background: transparent;
+    padding: $space-1 $space-5;
+    box-shadow: none;
+    cursor: default;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: $color-teal-deep;
+    }
+
+    h3 {
+      color: $color-navy;
+      margin: 0 0 $space-1;
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+    }
+    p { margin: 0; color: $color-text; font-size: $font-size-sm; line-height: 1.55; }
+  }
+}
+
+// ─── Closing lines ────────────────────────────────────────────────────────────
 .solution-closing {
   display: flex;
   flex-direction: column;

@@ -2,7 +2,7 @@
 $color-navy-900:    #0A1733;
 $color-navy:        #112449;
 $color-navy-light:  #1E3870;
-$color-navy-ink:    #16284F;
+$color-navy-ink:    $color-navy;
 
 $color-teal:        #14E0C0;   // primary accent — electric / tech
 $color-teal-deep:   #0DB69A;
@@ -35,7 +35,7 @@ $color-bg:          $color-cream;
 $color-border:      $color-soft-gray;
 $color-border-strong: #CFD6E0;
 $color-text:        $color-navy;
-$color-text-muted:  $color-blue-gray-2;
+$color-text-muted:  $color-navy;
 $color-text-subtle: $color-blue-gray-3;
 
 // ─── Gradients ───────────────────────────────────────────────────────────────
