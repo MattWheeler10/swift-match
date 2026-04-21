@@ -73,9 +73,14 @@ defineProps<{
 }
 
 .problem-closing {
-  font-weight: $font-weight-bold;
+  padding: $space-4 $space-5;
+  background: $color-teal-soft;
+  border-left: 3px solid $color-teal-deep;
+  border-radius: 0 $radius-sm $radius-sm 0;
+  font-weight: $font-weight-medium;
   color: $color-navy;
-  font-size: $font-size-md;
+  font-size: $font-size-sm;
+  margin: 0;
 }
 
 .problem-link { align-self: flex-start; }

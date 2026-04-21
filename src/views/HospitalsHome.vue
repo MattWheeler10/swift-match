@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeroSection from '@/components/sections/HeroSection.vue'
-import WorkflowFlow from '@/components/sections/WorkflowFlow.vue'
+import HeroWorkflow from '@/components/sections/HeroWorkflow.vue'
+import WavePipeline from '@/components/sections/WavePipeline.vue'
 import ComplianceStrip from '@/components/sections/ComplianceStrip.vue'
 import ProblemSection from '@/components/sections/ProblemSection.vue'
 import SolutionSteps from '@/components/sections/SolutionSteps.vue'
@@ -26,7 +27,7 @@ const h = hospitalsHome
     :ctas="h.hero.ctas"
   >
     <template #visual>
-      <WorkflowFlow :steps="h.hero.workflow.steps" :label="h.hero.workflow.label" vertical />
+      <HeroWorkflow :steps="h.hero.workflow.steps" :label="h.hero.workflow.label" />
     </template>
   </HeroSection>
 
@@ -49,11 +50,14 @@ const h = hospitalsHome
     :links="h.solution.links"
   />
 
-  <SectionBlock :headline="h.howItWorks.headline">
-    <WorkflowFlow :steps="h.howItWorks.steps" :label="h.howItWorks.supportingLine" />
-    <RouterLink :to="h.howItWorks.link.to" class="btn btn--ghost">
-      {{ h.howItWorks.link.label }} <svg class="btn__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-    </RouterLink>
+  <SectionBlock :headline="h.howItWorks.headline" :subheadline="h.howItWorks.supportingLine">
+    <WavePipeline :steps="h.howItWorks.steps" />
+    <div class="how-cta">
+      <RouterLink :to="h.howItWorks.link.to" class="btn btn--primary">
+        {{ h.howItWorks.link.label }}
+        <svg class="btn__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </RouterLink>
+    </div>
   </SectionBlock>
 
   <PlatformVideo
@@ -97,3 +101,9 @@ const h = hospitalsHome
     :ctas="h.finalCta.ctas"
   />
 </template>
+
+<style scoped lang="scss">
+@use '@/assets/styles/variables' as *;
+
+.how-cta { display: flex; }
+</style>

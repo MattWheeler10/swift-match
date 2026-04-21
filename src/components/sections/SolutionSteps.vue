@@ -41,7 +41,12 @@ defineProps<{
     </div>
 
     <div v-if="links?.length" class="solution-links">
-      <RouterLink v-for="l in links" :key="l.to" :to="l.to" class="btn btn--ghost">
+      <RouterLink
+        v-for="(l, i) in links"
+        :key="l.to"
+        :to="l.to"
+        :class="['btn', i === 0 ? 'btn--primary' : 'btn--outline']"
+      >
         {{ l.label }} <svg class="btn__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </RouterLink>
     </div>
@@ -140,11 +145,17 @@ defineProps<{
   display: flex;
   flex-direction: column;
   gap: $space-3;
-  padding: $space-6;
-  background: $color-white;
-  border-radius: $radius-md;
 
-  p { margin: 0; font-weight: $font-weight-medium; color: $color-navy; }
+  p {
+    margin: 0;
+    padding: $space-4 $space-5;
+    background: $color-teal-soft;
+    border-left: 3px solid $color-teal-deep;
+    border-radius: 0 $radius-sm $radius-sm 0;
+    font-weight: $font-weight-medium;
+    color: $color-navy;
+    font-size: $font-size-sm;
+  }
 }
 
 .solution-links {
