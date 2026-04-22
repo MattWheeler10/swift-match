@@ -108,6 +108,7 @@ function onSubmit(e: Event) {
 </template>
 
 <style scoped lang="scss">
+@use 'sass:color';
 @use '@/assets/styles/variables' as *;
 
 .booking {
@@ -223,7 +224,7 @@ function onSubmit(e: Event) {
     margin-top: $space-1;
     font-size: $font-size-xs;
     font-weight: $font-weight-medium;
-    color: darken($color-coral, 12%);
+    color: color.adjust($color-coral, $lightness: -12%);
     line-height: 1.4;
     animation: error-in 160ms $ease-smooth both;
 
