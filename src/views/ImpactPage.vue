@@ -38,8 +38,15 @@ import { impact as i } from '@/content/impact'
 
   <!-- ── Core Value ── -->
   <SectionBlock :headline="i.coreValue.headline">
-    <div v-reveal.stagger="{ stagger: 0.1, y: 20 }" class="statements">
-      <p v-for="s in i.coreValue.statements" :key="s" class="statement">{{ s }}</p>
+    <div v-reveal.stagger="{ stagger: 0.12, y: 28 }" class="insight-grid">
+      <div
+        v-for="s in i.coreValue.statements"
+        :key="s"
+        class="insight-card"
+      >
+        <p class="insight-card__text">{{ s }}</p>
+        <span class="insight-card__bar" aria-hidden="true" />
+      </div>
     </div>
   </SectionBlock>
 
@@ -231,23 +238,38 @@ import { impact as i } from '@/content/impact'
   }
 }
 
-// ─── Core value statements ────────────────────────────────────────────────────
-.statements {
-  display: flex;
-  flex-direction: column;
-  gap: $space-4;
+// ─── Core value insight cards ─────────────────────────────────────────────────
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-5;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
 }
 
-.statement {
-  padding: $space-4 $space-5;
-  border-left: 3px solid $color-teal-deep;
-  background: $color-teal-soft;
-  border-radius: 0 $radius-md $radius-md 0;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  color: $color-navy;
-  line-height: 1.6;
-  margin: 0;
+.insight-card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  padding: $space-8 $space-6;
+  background: $color-navy;
+  border-radius: $radius-lg;
+
+  &__text {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: rgba($color-white, 0.88);
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+  }
+
+  &__bar {
+    display: block;
+    height: 3px;
+    border-radius: $radius-full;
+    background: linear-gradient(90deg, $color-teal-deep 0%, rgba($color-teal-deep, 0.2) 100%);
+  }
 }
 
 // ─── Supporting text stack ────────────────────────────────────────────────────

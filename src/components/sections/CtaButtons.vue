@@ -33,5 +33,13 @@ defineProps<{ ctas: CTA[] }>()
   display: flex;
   flex-wrap: wrap;
   gap: $space-4;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+    }
+  }
 }
 </style>

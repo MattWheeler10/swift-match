@@ -1,7 +1,7 @@
 import type { NavLink, VerticalCard, CTA } from './types'
 
 export const brand = {
-  name: 'SwiftMatch Technologies',
+  name: 'SwiftMatch',
   shortName: 'SwiftMatch',
 }
 
@@ -50,4 +50,8 @@ export const verticals: VerticalCard[] = [
 ]
 
 export const bookDemoCta: CTA = { label: 'Book a Live Demo', to: '/demo', variant: 'primary' }
-export const startPilotCta: CTA = { label: 'Start Pilot Deployment', to: '/pilot', variant: 'outline' }
+export const startPilotCta: CTA = {
+  label: 'Start Pilot Deployment',
+  to: '/pilot',
+  variant: 'outline',
+}

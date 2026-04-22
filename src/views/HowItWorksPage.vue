@@ -539,6 +539,7 @@ onUnmounted(() => {
   }
 
   &__body {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: $space-4;
@@ -554,20 +555,29 @@ onUnmounted(() => {
     }
   }
 
-  &__groups { display: flex; flex-wrap: wrap; gap: $space-6; }
+  &__groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-4;
+
+    @media (max-width: 760px) { grid-template-columns: 1fr; }
+  }
 
   &__group {
     display: flex;
     flex-direction: column;
-    gap: $space-2;
-    min-width: 160px;
+    gap: $space-3;
+    padding: $space-5 $space-5 $space-6;
+    background: $color-blue-gray-1;
+    border-radius: $radius-md;
+    border-top: 2px solid $color-teal-soft;
 
     h4 {
       margin: 0;
       font-size: $font-size-xs;
-      font-weight: $font-weight-semibold;
+      font-weight: $font-weight-bold;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       color: $color-teal-deep;
     }
 
@@ -577,14 +587,14 @@ onUnmounted(() => {
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: $space-1;
+      gap: $space-2;
     }
 
     li {
       font-size: $font-size-sm;
       color: $color-text;
       line-height: 1.5;
-      padding-left: $space-3;
+      padding-left: $space-4;
       position: relative;
 
       &::before {
@@ -595,7 +605,8 @@ onUnmounted(() => {
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background: rgba($color-navy, 0.3);
+        background: $color-teal-deep;
+        opacity: 0.5;
       }
     }
   }

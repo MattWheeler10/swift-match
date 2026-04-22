@@ -62,7 +62,7 @@ defineProps<{
   background: $gradient-hero;
   isolation: isolate;
 
-  @media (max-width: 768px) { padding-block: $space-16 $space-16; }
+  @media (max-width: 768px) { padding-block-start: $space-24; padding-block-end: $space-16; }
 
   &__bg {
     position: absolute; inset: 0;

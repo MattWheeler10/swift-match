@@ -141,6 +141,11 @@ watch(mobileOpen, (open) => {
     transition:
       max-width $transition-slow,
       padding $transition-slow;
+
+    @media (max-width: 960px) {
+      padding-top: 1.25rem;
+      padding-inline: $space-3;
+    }
   }
 
   &__inner {
@@ -158,6 +163,18 @@ watch(mobileOpen, (open) => {
       border-color $transition-slow,
       box-shadow $transition-slow,
       backdrop-filter $transition-slow;
+
+    @media (max-width: 960px) {
+      padding-block: $space-2;
+      background: rgba($color-white, 0.92);
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      border-color: rgba($color-navy, 0.08);
+      box-shadow:
+        0 1px 0 rgba($color-white, 0.9) inset,
+        0 10px 30px -12px rgba($color-navy-900, 0.18),
+        0 4px 10px -4px rgba($color-navy-900, 0.06);
+    }
   }
 
   &--scrolled &__inner {
@@ -313,6 +330,10 @@ watch(mobileOpen, (open) => {
     gap: $space-2;
     height: 40px;
     padding: 0 $space-2 0 $space-5;
+
+    @media (max-width: 960px) {
+      display: none;
+    }
     font-size: $font-size-sm;
     font-weight: $font-weight-semibold;
     color: $color-white;

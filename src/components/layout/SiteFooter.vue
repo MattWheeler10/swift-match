@@ -98,6 +98,10 @@ import { brand, footerLinks } from '@/content/shared'
     display: flex;
     flex-wrap: wrap;
     gap: $space-8;
+
+    @media (max-width: 640px) {
+      gap: $space-4;
+    }
   }
 
   &__link {
