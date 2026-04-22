@@ -19,8 +19,12 @@ const formState = reactive<Record<string, FieldState>>(
   )
 )
 
+function s(name: string): FieldState {
+  return formState[name] as FieldState
+}
+
 function validate(field: Field): string {
-  const val = formState[field.name].value.trim()
+  const val = s(field.name).value.trim()
   if (field.required && !val) return `${field.label} is required`
   if (field.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))
     return 'Please enter a valid email address'
@@ -28,21 +32,20 @@ function validate(field: Field): string {
 }
 
 function onBlur(field: Field) {
-  formState[field.name].touched = true
-  formState[field.name].error = validate(field)
+  s(field.name).touched = true
+  s(field.name).error = validate(field)
 }
 
 function onInput(field: Field) {
-  if (formState[field.name].touched)
-    formState[field.name].error = validate(field)
+  if (s(field.name).touched)
+    s(field.name).error = validate(field)
 }
 
 function onSubmit(e: Event) {
   e.preventDefault()
-  // Touch all fields and validate
   props.fields.forEach(f => {
-    formState[f.name].touched = true
-    formState[f.name].error = validate(f)
+    s(f.name).touched = true
+    s(f.name).error = validate(f)
   })
 }
 </script>
@@ -59,7 +62,7 @@ function onSubmit(e: Event) {
           v-for="f in fields"
           :key="f.name"
           class="booking__field"
-          :class="{ 'booking__field--error': formState[f.name].touched && formState[f.name].error }"
+          :class="{ 'booking__field--error': s(f.name).touched && s(f.name).error }"
         >
           <label :for="f.name" class="booking__label">
             {{ f.label }}<em v-if="f.required" class="booking__required" aria-hidden="true"> *</em>
@@ -67,18 +70,18 @@ function onSubmit(e: Event) {
           <div class="booking__input-wrap">
             <input
               :id="f.name"
-              v-model="formState[f.name].value"
+              v-model="s(f.name).value"
               :type="f.type"
               :name="f.name"
               :required="f.required"
-              :aria-invalid="formState[f.name].touched && !!formState[f.name].error"
-              :aria-describedby="formState[f.name].error ? `${f.name}-error` : undefined"
+              :aria-invalid="s(f.name).touched && !!s(f.name).error"
+              :aria-describedby="s(f.name).error ? `${f.name}-error` : undefined"
               class="booking__input"
               @blur="onBlur(f)"
               @input="onInput(f)"
             />
             <span
-              v-if="formState[f.name].touched && formState[f.name].error"
+              v-if="s(f.name).touched && s(f.name).error"
               class="booking__input-icon"
               aria-hidden="true"
             >
@@ -91,12 +94,12 @@ function onSubmit(e: Event) {
             </span>
           </div>
           <p
-            v-if="formState[f.name].touched && formState[f.name].error"
+            v-if="s(f.name).touched && s(f.name).error"
             :id="`${f.name}-error`"
             class="booking__error"
             role="alert"
           >
-            {{ formState[f.name].error }}
+            {{ s(f.name).error }}
           </p>
         </div>
 
