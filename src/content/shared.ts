@@ -1,15 +1,16 @@
-import type { NavLink, VerticalCard, CTA } from './types'
+import type { NavLink, CTA } from './types'
 
 export const brand = {
-  name: 'SwiftMatch',
+  name: 'SwiftMatch Workforce',
   shortName: 'SwiftMatch',
 }
 
 export const navLinks: NavLink[] = [
-  { label: 'Solutions', to: '/solution' },
-  { label: 'How It Works', to: '/how-it-works' },
-  { label: 'Impact', to: '/impact' },
+  { label: 'Healthcare', to: '/healthcare' },
+  { label: 'Workforce Model', to: '/workforce-model' },
+  { label: 'Governance', to: '/governance' },
   { label: 'Platform', to: '/platform' },
+  { label: 'Impact', to: '/impact' },
   { label: 'Pilot', to: '/pilot' },
 ]
 
@@ -20,33 +21,13 @@ export const primaryCta: CTA = {
 }
 
 export const footerLinks: NavLink[] = [
-  { label: 'Solutions', to: '/solution' },
-  { label: 'Impact', to: '/impact' },
-  { label: 'How It Works', to: '/how-it-works' },
+  { label: 'Healthcare', to: '/healthcare' },
+  { label: 'Workforce Model', to: '/workforce-model' },
+  { label: 'Governance', to: '/governance' },
   { label: 'Platform', to: '/platform' },
+  { label: 'Impact', to: '/impact' },
   { label: 'Pilot', to: '/pilot' },
   { label: 'Book Demo', to: '/demo' },
-]
-
-export const verticals: VerticalCard[] = [
-  {
-    id: 'hospitals',
-    title: 'Hospitals',
-    description: 'Reduce agency spend and increase clinical capacity',
-    to: '/hospitals',
-  },
-  {
-    id: 'care-homes',
-    title: 'Care Homes',
-    description: 'Stabilise staffing and reduce reliance on agency workers',
-    to: '/care-homes',
-  },
-  {
-    id: 'domiciliary',
-    title: 'Domiciliary Care',
-    description: 'Ensure every visit is covered without agency dependence',
-    to: '/domiciliary',
-  },
 ]
 
 export const bookDemoCta: CTA = { label: 'Book a Live Demo', to: '/demo', variant: 'primary' }

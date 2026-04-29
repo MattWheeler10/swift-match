@@ -18,14 +18,19 @@ const router = createRouter({
       component: () => import('@/views/GlobalHome.vue'),
     },
     {
-      path: '/solution',
-      name: 'solution',
-      component: () => import('@/views/SolutionPage.vue'),
+      path: '/healthcare',
+      name: 'healthcare',
+      component: () => import('@/views/HealthcarePage.vue'),
     },
     {
-      path: '/how-it-works',
-      name: 'how-it-works',
-      component: () => import('@/views/HowItWorksPage.vue'),
+      path: '/workforce-model',
+      name: 'workforce-model',
+      component: () => import('@/views/WorkforceModelPage.vue'),
+    },
+    {
+      path: '/governance',
+      name: 'governance',
+      component: () => import('@/views/GovernancePage.vue'),
     },
     {
       path: '/impact',
@@ -46,21 +51,6 @@ const router = createRouter({
       path: '/demo',
       name: 'demo',
       component: () => import('@/views/DemoPage.vue'),
-    },
-    {
-      path: '/hospitals',
-      name: 'hospitals',
-      component: () => import('@/views/HospitalsHome.vue'),
-    },
-    {
-      path: '/care-homes',
-      name: 'care-homes',
-      component: () => import('@/views/CareHomesHome.vue'),
-    },
-    {
-      path: '/domiciliary',
-      name: 'domiciliary',
-      component: () => import('@/views/DomiciliaryHome.vue'),
     },
   ],
 })

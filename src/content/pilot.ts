@@ -1,118 +1,132 @@
 export const pilot = {
   hero: {
-    headline: 'Start with a Controlled Pilot Deployment',
-    subheadline: 'Validate performance, impact, and ROI in your live environment',
+    eyebrow: 'Pilot',
+    headline: 'Deploy the Platform in Your Organisation',
+    subheadline:
+      'The platform is deployed through a structured pilot. Customisation to meet your precise requirements is available on request.',
     supportingLine:
-      'A structured, low-risk approach to improving hiring speed, workforce capacity, and cost control',
-    tensionLine:
-      'Every delayed hire increases cost and reliance on agency staffing — this is the fastest way to change that',
+      'Run a defined pilot to implement the platform and measure impact on hiring speed, workforce stability, and agency reliance.',
     ctas: [
-      { label: 'Start Pilot Deployment', to: '/pilot', variant: 'primary' as const },
-      { label: 'Book a Live Demo', to: '/demo', variant: 'outline' as const },
+      { label: 'Start Pilot', to: '/pilot', variant: 'primary' as const },
+      { label: 'Book Demo', to: '/demo', variant: 'outline' as const },
     ],
+    pilotLine: 'Run a structured pilot to validate impact before full deployment.',
   },
 
   whatItIs: {
-    headline: 'A live, measurable deployment',
-    body: [
-      'The SwiftMatch pilot is not a simulation or proof of concept',
-      'It operates within your existing recruitment workflow to deliver measurable results on real roles',
-    ],
+    headline: 'Pilot Deployment',
+    body: 'A structured introduction to the Workforce Control Model through a guided demo and executive presentation.',
+    purposeHeadline: 'Understand the Model in Your Organisation',
+    purpose:
+      'The pilot is designed to help decision-makers evaluate:',
     points: [
-      'Runs in your live environment',
-      'Integrates with your existing ATS',
-      'Applied to real vacancies and hiring activity',
+      'How the model applies to your workforce',
+      'Where impact will be created',
+      'How the system would be deployed',
     ],
-    keyLine: 'This is a real deployment designed to deliver measurable impact within weeks',
-    additionalLine: 'You are not testing a tool — you are validating a system within your own environment',
+    notATrial: 'It is not a trial. It is a structured, guided process.',
   },
 
-  deliverables: {
-    headline: 'Immediate capability applied to your live hiring workflow',
-    lead: 'During the pilot, SwiftMatch delivers:',
-    items: [
-      'AI-driven CV scoring and ranking',
-      'Automated shortlisting and scheduling',
-      'Workflow orchestration across all stages',
-      'Continuous pipeline creation and reuse',
-      'Structured interview support and evaluation',
-      'Real-time performance tracking and reporting',
+  phases: {
+    headline: 'What Happens in the Pilot',
+    steps: [
+      {
+        number: '1',
+        title: 'Executive Briefing',
+        body: 'An overview of the Workforce Control Model and its application to your organisation.',
+        covers: [
+          'Current hiring challenges',
+          'Workforce control vs recruitment',
+          'The structural limitations of existing approaches',
+        ],
+      },
+      {
+        number: '2',
+        title: 'Platform Demonstration',
+        body: 'A guided walkthrough of the system in practice.',
+        covers: [
+          'How roles are defined and structured',
+          'How candidate pools are accessed',
+          'How evaluation and shortlisting are performed',
+          'How hiring decisions are governed and tracked',
+        ],
+      },
+      {
+        number: '3',
+        title: 'Workforce Impact Discussion',
+        body: 'We map the model to your organisation.',
+        covers: ['Hiring speed', 'Vacancy duration', 'Agency reliance', 'Workforce stability'],
+      },
+      {
+        number: '4',
+        title: 'Pilot Scope Definition',
+        body: 'If relevant, we define a structured pilot.',
+        covers: ['Target roles or departments', 'Expected outcomes', 'Measurement approach'],
+      },
     ],
-    keyLine: 'Immediate visibility into how your hiring process performs — and where it improves',
   },
 
-  phases: [
-    {
-      title: 'Phase 1 — Deployment (Weeks 1–4)',
-      items: [
-        'Integration with existing systems',
-        'Workflow configuration',
-        'Deployment on live roles',
-        'KPI baseline established',
-      ],
-    },
-    {
-      title: 'Phase 2 — Optimisation',
-      items: ['Workflow refinement', 'Performance tuning', 'Process alignment with teams'],
-    },
-    {
-      title: 'Phase 3 — Evaluation & Scale Decision',
-      items: [
-        'Results reviewed against baseline',
-        'ROI assessed (including agency reduction)',
-        'Decision to scale across organisation',
-      ],
-    },
-  ],
-  phasesClosingLine: 'Structured delivery with measurable outcomes at every stage',
-
-  kpis: {
-    headline: 'Defined, measurable outcomes',
-    items: [
-      'Time from CV to interview (<48 hours target)',
-      'Time-to-fill reduction',
-      'CV processing coverage (target: 100%)',
-      'Interview attendance rates',
-      'Reduction in manual workload',
-      'Reduction in vacancy duration',
-      'Reduction in agency reliance',
-    ],
-    keyLine:
-      'By the end of the pilot, you have clear evidence of performance improvement and a defined path to scale',
-    supportingLine: 'Performance is measured against defined outcomes — not assumed',
-  },
-
-  commercial: {
-    headline: 'Transparent, phased investment',
+  decisionMakers: {
+    headline: 'What Decision-Makers Get',
+    intro: 'The pilot provides clarity on:',
     points: [
-      'Fixed-cost pilot deployment',
-      'Clearly defined scope and deliverables',
-      'No long-term commitment required upfront',
+      'How the system works in practice',
+      'Where measurable impact will be created',
+      'How risk is controlled through governance',
+      'What deployment would involve',
     ],
-    additionalLine: 'Scaling decisions are based entirely on proven results',
+  },
+
+  designedFor: {
+    headline: 'Designed for Healthcare Leadership Teams',
+    intro: 'The pilot is typically attended by:',
+    attendees: [
+      'HR and workforce leaders',
+      'Operational leadership (COO / service leads)',
+      'Finance stakeholders',
+      'Transformation and digital teams',
+    ],
+    logistics: [
+      '30–60 minute executive session',
+      'No preparation required',
+      'Tailored discussion based on your organisation',
+    ],
   },
 
   lowRisk: {
-    headline: 'A controlled, low-risk approach',
+    headline: 'A Low-Risk Way to Evaluate Change',
+    body: 'The pilot is designed to:',
     points: [
-      'No replacement of existing systems',
-      'Operates within current workflows',
-      'Limited initial scope',
-      'Measurable outcomes before scaling',
-      'Full visibility of performance',
+      'Require minimal upfront commitment',
+      'Provide clear, structured insight',
+      'Enable informed decision-making',
     ],
-    keyLine: 'You validate impact before committing to scale',
-    criticalLine:
-      'The risk is not in running the pilot — it is in continuing with a system that cannot respond fast enough',
+  },
+
+  postPilot: {
+    headline: 'From Evaluation to Deployment',
+    intro: 'Following the pilot, organisations typically:',
+    steps: [
+      'Proceed to a defined implementation',
+      'Expand scope across departments',
+      'Measure ongoing workforce impact',
+    ],
+    outcomes: {
+      label: 'The outcome of the pilot is a clear view of:',
+      points: [
+        'Expected financial impact',
+        'Operational changes required',
+        'Recommended deployment approach',
+      ],
+    },
   },
 
   finalCta: {
-    headline: 'Start your pilot deployment',
-    subtext:
-      'See measurable improvements in hiring speed, cost, and workforce capacity within weeks — in your own environment',
+    headline: 'Start Pilot',
+    subtext: 'Run a structured evaluation tailored to your organisation.',
     ctas: [
-      { label: 'Start Pilot Deployment', to: '/pilot', variant: 'primary' as const },
-      { label: 'Book a Live Demo', to: '/demo', variant: 'outline' as const },
+      { label: 'Start Pilot', to: '/pilot', variant: 'primary' as const },
+      { label: 'Book Demo', to: '/demo', variant: 'outline' as const },
     ],
   },
 }

@@ -1,17 +1,21 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, computed } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionBlock from './SectionBlock.vue'
 import type { Metric } from '@/content/types'
 
-defineProps<{
+const props = defineProps<{
   headline: string
   metrics: Metric[]
   supportingLine?: string
   pressureLine?: string
   alt?: boolean
 }>()
+
+const gridStyle = computed(() => ({
+  '--proof-cols': props.metrics.length,
+}))
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -59,7 +63,7 @@ onBeforeUnmount(() => {
 
 <template>
   <SectionBlock :headline="headline" :alt="alt" eyebrow="Proof">
-    <div ref="gridRef" class="proof-grid">
+    <div ref="gridRef" class="proof-grid" :style="gridStyle">
       <div v-for="m in metrics" :key="m.value" class="proof-metric">
         <div class="proof-metric__value">{{ m.value }}</div>
         <div v-if="m.label" class="proof-metric__label">{{ m.label }}</div>
@@ -75,7 +79,7 @@ onBeforeUnmount(() => {
 
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(var(--proof-cols, 4), 1fr);
   gap: 1px;
   background: $color-border;
   border-radius: $radius-lg;

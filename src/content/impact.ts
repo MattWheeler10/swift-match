@@ -1,129 +1,112 @@
 export const impact = {
   hero: {
-    headline: 'Improving Workforce Capacity, Cost Efficiency, and Service Outcomes',
+    eyebrow: 'Impact',
+    headline: 'Workforce Impact',
     subheadline:
-      'SwiftMatch Workforce directly impacts the metrics that define organisational performance',
+      'A measurable shift in hiring speed, workforce stability, and agency reliance.',
     supportingLine:
-      'From hiring speed to workforce stability — measurable improvements in capacity, cost, and workforce performance',
-    diagramSteps: ['Hiring', 'Competency', 'Performance', 'Outcomes', 'Value'],
+      'From Process Efficiency to Workforce Outcomes',
   },
 
-  coreValue: {
-    headline: 'Core value',
-    statements: [
-      'Hiring is not an isolated function — it is the primary driver of workforce capacity, cost, and performance',
-      'Faster, higher-quality hiring increases capacity, reduces cost, stabilises staffing, and improves service outcomes',
-      'Without a continuous workforce supply, organisations are forced to solve the same problem repeatedly — at increasing cost',
+  processShift: {
+    headline: 'From Process Efficiency to Workforce Outcomes',
+    intro: 'Traditional recruitment focuses on process metrics:',
+    traditional: ['Time-to-hire', 'Cost-per-hire', 'Activity levels'],
+    note: 'These do not reflect what matters in healthcare environments.',
+    matters: {
+      label: 'What matters is:',
+      points: ['Workforce availability', 'Vacancy duration', 'Agency dependence', 'Consistency of hiring decisions'],
+    },
+  },
+
+  whatChanges: {
+    headline: 'What Changes with a Healthcare Workforce Governance Platform',
+    intro: 'SwiftMatch changes not just how hiring is done — but what outcomes are achieved.',
+    outcomes: [
+      {
+        number: '1',
+        title: 'Hiring Speed',
+        body: 'Reduce time-to-hire from weeks to under 48 hours.',
+        supporting:
+          'Candidates are pre-qualified and ready to be activated, eliminating the need to restart the hiring process.',
+      },
+      {
+        number: '2',
+        title: 'Workforce Stability',
+        body: 'Reduce vacancy duration and improve continuity of care.',
+        supporting:
+          'Continuous access to qualified candidates ensures roles are filled consistently and predictably.',
+      },
+      {
+        number: '3',
+        title: 'Reduced Agency Reliance',
+        body: 'Shift from reactive agency usage to controlled permanent hiring.',
+        supporting:
+          'By reducing vacancy duration, organisations avoid defaulting to high-cost agency supply.',
+      },
+      {
+        number: '4',
+        title: 'Increased Hiring Capacity',
+        body: 'Increase recruiter output without increasing headcount.',
+        supporting:
+          'Structured workflows and pre-qualified candidates enable significantly higher throughput.',
+      },
+      {
+        number: '5',
+        title: 'Consistency of Decisions',
+        body: 'Apply the same evaluation approach across all roles and departments.',
+        supporting: 'Reduce variability and improve the quality of hiring outcomes.',
+      },
+      {
+        number: '6',
+        title: 'Reduced Operational Risk',
+        body: 'Minimise the risk associated with inconsistent or delayed hiring.',
+        supporting:
+          'Ensure decisions are controlled, structured, and aligned with organisational standards.',
+      },
     ],
   },
 
-  workforce: {
-    headline: 'Workforce and Service Impact',
-    points: [
-      'Faster access to qualified staff',
-      'Reduced disruption caused by vacancies and last-minute cover',
-      'Improved continuity and consistency of service delivery',
-      'Reduced reliance on temporary or agency staff',
-      'Immediate access to pre-qualified candidates improves hiring reliability',
+  measuredOutcomes: {
+    headline: 'Measured Outcomes',
+    metrics: [
+      { value: '<48 hours', label: 'time-to-hire' },
+      { value: '3–5×', label: 'increase in hiring capacity' },
+      { value: 'Reduced', label: 'agency staffing reliance' },
+      { value: 'Improved', label: 'consistency across hiring decisions' },
     ],
-    supportingLine:
-      'When access to qualified candidates is delayed, service delivery becomes unstable and dependent on temporary solutions',
-    closingLine: 'Better hiring directly improves workforce stability and service outcomes',
+    disclaimer: 'Based on pilot deployments and operational modelling',
+  },
+
+  valueDrivers: {
+    headline: 'Where the Value Comes From',
+    intro: 'Impact is driven by structural changes in how hiring is performed:',
+    drivers: [
+      { title: 'Reduced Vacancy Duration', body: 'Faster hiring reduces the number of unfilled roles.' },
+      { title: 'Lower Agency Spend', body: 'Fewer vacancies lead to reduced reliance on agency staff.' },
+      { title: 'Higher Workforce Utilisation', body: 'Roles are filled faster, improving operational efficiency.' },
+      { title: 'Improved Decision Quality', body: 'Consistent evaluation reduces poor hiring outcomes.' },
+    ],
   },
 
   financial: {
     headline: 'Financial Impact',
     points: [
-      '20–40% reduction in agency and temporary staffing spend over time',
-      'Reduced cost of vacancy and hiring delay',
-      'Increased utilisation of permanent workforce',
-      'Reduced dependency on agency staff through faster access to pre-qualified candidates',
+      'Reduced agency spend through lower reliance on temporary staffing',
+      'Lower vacancy costs through faster role fulfilment',
+      'Improved workforce utilisation through consistent role coverage',
     ],
-    supportingLines: [
-      'Agency spend is not inevitable — it is the result of a system that cannot respond fast enough',
-      'Without a continuous pipeline of pre-qualified candidates, organisations are forced to repeatedly rely on agency staffing',
-      'Agency staffing is often one of the largest uncontrolled cost areas across organisations',
-    ],
-    closingLine: 'Every day a role remains unfilled carries a measurable cost',
-  },
-
-  operational: {
-    headline: 'Operational Impact',
-    metrics: [
-      '<48 hours from CV to interview',
-      '100% of applications processed',
-      '95% interview attendance',
-      'Reduced candidate drop-off',
-      'Reduced vacancy duration',
-    ],
-    supportingLine:
-      'Immediate access to pre-qualified candidates reduces time from vacancy to interview',
+    keyStatement:
+      'For large healthcare organisations, this typically represents multi-million-pound annual impact, driven primarily by reductions in agency spend and vacancy-related costs.',
     closingLine:
-      'Removing delays and enabling immediate access to candidates unlocks capacity across the system',
-  },
-
-  capability: {
-    headline: 'Linking workforce capability to performance and outcomes',
-    supportingLine:
-      'Consistent access to high-quality candidates ensures consistent workforce capability',
-    points: [
-      'Hiring defines the capability within your workforce',
-      'Workforce capability determines how services are delivered',
-      'Consistent capability leads to consistent outcomes',
-    ],
-    keyLine: 'Workforce outcomes are a function of workforce capability',
-  },
-
-  transformation: {
-    headline: 'From hiring activity to workforce performance system',
-    intro:
-      'SwiftMatch Workforce enables a progression from reactive hiring to a controlled, data-driven workforce system',
-    stages: [
-      { title: 'Workflow Orchestration', description: 'Faster hiring and immediate capacity improvement' },
-      { title: 'Structured Evaluation', description: 'Consistent, competency-based hiring decisions' },
-      {
-        title: 'Pipeline Creation and Reuse',
-        description:
-          'Persistent candidate pipelines provide immediate access to pre-qualified candidates when vacancies arise. Agency reliance reduces as permanent workforce supply increases',
-      },
-      { title: 'Workforce Planning', description: 'Visibility of workforce supply and demand' },
-      {
-        title: 'Continuous Optimisation',
-        description: 'Ongoing improvement in cost, capacity, and performance',
-      },
-    ],
-    closingLine:
-      'Hiring shifts from reactive sourcing to activating an existing, high-quality candidate supply',
-  },
-
-  proof: {
-    headline: 'Proven performance in live environments',
-    metrics: [
-      { value: '<48 hours', label: 'to interview' },
-      { value: '100%', label: 'CV coverage' },
-      { value: '95%', label: 'interview attendance' },
-      { value: '≥5 days', label: 'reduction in time-to-fill' },
-    ],
-    supportingLine:
-      'Measured reductions in agency reliance driven by faster hiring and pipeline reuse',
-    pressureLine:
-      'The cost of inaction is ongoing — every delayed hire compounds cost, instability, and reliance on agency staff',
-  },
-
-  pilot: {
-    headline: 'Validate impact in your environment',
-    points: ['4–6 week pilot', 'Live workflows', 'Measurable KPIs', 'No system replacement'],
-    supportingLine: 'Quantify reduction in agency spend and time-to-hire using your own data',
-    closingLine: 'See measurable results before committing to scale',
-    cta: { label: 'Start Pilot Deployment', to: '/pilot', variant: 'primary' as const },
+      'The specific financial impact is quantified during a structured pilot, based on your workforce composition, vacancy levels, and agency usage.',
   },
 
   finalCta: {
-    headline: 'See the impact in your organisation',
-    subtext: 'Walk through your current hiring workflow and identify measurable improvements',
+    headline: 'See the Impact in Your Organisation',
+    subtext: 'Every organisation has a different starting point. The fastest way to understand the impact is through a structured pilot.',
     ctas: [
-      { label: 'Book a Live Demo', to: '/demo', variant: 'primary' as const },
-      { label: 'Start Pilot Deployment', to: '/pilot', variant: 'outline' as const },
+      { label: 'Start Pilot', to: '/pilot', variant: 'primary' as const },
     ],
   },
 }

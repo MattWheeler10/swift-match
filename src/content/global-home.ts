@@ -1,191 +1,108 @@
 export const globalHome = {
+  // ─── 1. Hero ──────────────────────────────────────────────────────────────
   hero: {
-    headline: 'From Workforce Shortage to Workforce Control',
+    headline: 'From Workforce Shortage\nto Workforce Control',
     subheadline:
-      'A workforce system that stabilises staffing, reduces agency reliance, and builds a continuous, reusable talent pipeline',
+      'A healthcare workforce governance platform that gives organisations continuous access to qualified candidates — reducing vacancy duration, lowering agency reliance, and enabling hiring in under 48 hours.',
     supportingLine:
-      'Workforce supply, cost, and performance are determined by how quickly you can access and activate qualified candidates',
-    keyLine:
-      "Most organisations don't have a recruitment problem — they have a workforce control problem. By maintaining a continuous pipeline of pre-qualified candidates, organisations reduce vacancy duration and avoid agency reliance",
+      'Built for healthcare organisations where workforce supply determines clinical and operational performance.',
     ctas: [
-      { label: 'Start Pilot Deployment', to: '/pilot', variant: 'primary' as const },
-      { label: 'See the Platform in Action', to: '/platform', variant: 'outline' as const },
+      { label: 'Start Pilot', to: '/pilot', variant: 'primary' as const },
+      { label: 'See the Platform', to: '/platform', variant: 'outline' as const },
     ],
     workflow: {
       steps: [
-        'Advert',
-        'ATS',
-        'CV Ingestion',
-        'Scoring',
-        'Ranking',
-        'Shortlist',
-        'Scheduling',
-        'Interview',
+        'Define',
+        'Access',
+        'Evaluate',
+        'Select',
         'Hire (<48h)',
       ],
-      label: 'From weeks to <48 hours to secure top candidates',
+      label: 'From workforce shortage to workforce control',
     },
   },
 
-  verticalSelector: {
-    headline: 'Who is this for?',
-    subheadline: 'Select your sector to see how this works in your organisation',
+  // ─── 2. Urgency ("Why Now") ───────────────────────────────────────────────
+  urgency: {
+    headline: 'Workforce Performance Starts with Workforce Supply',
+    body: 'Workforce pressure, regulatory scrutiny, and cost escalation are increasing the need for controlled hiring systems.',
+    points: [
+      { label: 'Workforce Pressure', description: 'Vacancy rates are rising while candidate supply tightens across regulated healthcare.' },
+      { label: 'Regulatory Scrutiny', description: 'Hiring decisions must be consistent, auditable, and aligned with clinical standards.' },
+      { label: 'Cost Escalation', description: 'Agency spend continues to grow as reactive hiring cycles fail to close vacancies.' },
+    ],
   },
 
+  // ─── 3. Core Insight ──────────────────────────────────────────────────────
+  coreInsight: {
+    statement:
+      'Workforce supply, cost, and performance are determined by how quickly you can access and activate qualified candidates.',
+  },
+
+  // ─── 4. Problem ───────────────────────────────────────────────────────────
   problem: {
-    headline: 'Workforce shortages are not just a hiring issue — they are a system failure',
+    headline: 'Most Organisations Are Solving the Wrong Problem',
+    intro: 'Most healthcare organisations don\'t have a recruitment problem.\nThey have a workforce control problem.',
+    subtext: 'Traditional hiring starts from zero every time a role opens.',
     points: [
-      'Vacancies reduce capacity and service delivery',
-      'Delays force reliance on high-cost agency staff',
-      'Hiring cycles restart from zero every time',
-      'The best candidates are lost due to slow processes',
+      'Vacancies remain open for weeks',
+      'Hiring becomes reactive, inconsistent, and difficult to control',
+      'Agency reliance increases cost and dependency',
     ],
-    supportingLines: [
-      'Most organisations are not choosing agency reliance — they are forced into it by a system that cannot respond fast enough',
-      'Most organisations restart from zero every time a role opens — this drives delay, cost, and instability',
-    ],
-    closingLine: 'Every day a role remains unfilled carries a measurable cost',
-    link: { label: 'Learn how this impacts performance', to: '/impact' },
+    link: { label: 'See how governance changes this', to: '/governance' },
   },
 
-  solution: {
-    headline: 'From candidate pipelines to reduced agency reliance',
-    steps: [
-      {
-        title: 'Continuous Candidate Pipeline',
-        description: 'Candidates are continuously sourced, evaluated, and stored in structured pipelines',
-      },
-      {
-        title: 'Immediate Vacancy Activation',
-        description: 'When roles open, top candidates are already identified and ready to engage',
-      },
-      {
-        title: 'Reduced Agency Dependence',
-        description:
-          'Faster access to qualified candidates reduces vacancy duration and removes the need for agency cover',
-      },
-    ],
-    supportingLine:
-      'Instead of reacting to vacancies, organisations build and maintain a continuous pipeline of pre-qualified candidates',
-    twoColumns: [
-      {
-        title: 'Hiring Execution',
-        description: 'Process, score, and prioritise every candidate instantly',
-      },
-      {
-        title: 'Workforce Supply',
-        description:
-          'Build and maintain a reusable, pre-qualified candidate pipeline by role and location. Candidates are continuously evaluated, ranked, and ready to be activated when vacancies arise',
-      },
-    ],
-    closingLines: [
-      'Agency reliance is not a workforce problem — it is a supply timing problem',
-      'Your systems remain. Execution improves. Vacancies are filled from an existing pipeline — not restarted from zero',
-    ],
-    links: [
-      { label: 'Explore the solution', to: '/solution' },
-      { label: 'See how it works', to: '/how-it-works' },
-    ],
-  },
-
-  howItWorks: {
-    headline: 'How It Works',
-    steps: ['ATS', 'CV Ingestion', 'Score', 'Rank', 'Shortlist', 'Schedule', 'Interview', 'Hire'],
-    supportingLine: 'Every step is connected. No delays. No gaps',
-    link: { label: 'View full workflow', to: '/how-it-works' },
-  },
-
-  platform: {
-    textAboveVideo: 'From CV to interview in under 48 hours',
+  // ─── 5. Model Shift ───────────────────────────────────────────────────────
+  modelShift: {
+    headline: 'A Different Model',
+    body: 'SwiftMatch replaces reactive hiring with a continuous workforce system designed for healthcare environments.',
     subtext:
-      'See how SwiftMatch processes, ranks, and schedules candidates in real time and coordinates interviews automatically',
-    ctas: [
-      { label: 'Watch the Platform in Action', to: '/platform', variant: 'primary' as const },
-      { label: 'Book a Live Demo', to: '/demo', variant: 'outline' as const },
+      'Candidates are pre-qualified, available, and ready to be activated — so hiring no longer depends on restarting the process for every role.',
+    transition: { from: 'Hiring Pipeline', to: 'Controlled Workforce Supply' },
+    link: { label: 'Explore the Workforce Model', to: '/workforce-model' },
+  },
+
+  // ─── 6. Outcome Snapshot ──────────────────────────────────────────────────
+  outcomeSnapshot: {
+    headline: 'What This Delivers',
+    cards: [
+      {
+        title: 'Faster Hiring',
+        description: 'Hire qualified candidates in under 48 hours.',
+      },
+      {
+        title: 'Reduced Agency Reliance',
+        description: 'Convert demand into permanent hires and reduce cost.',
+      },
+      {
+        title: 'Consistent Decisions',
+        description: 'Standardised evaluation applied across every role.',
+      },
+      {
+        title: 'Workforce Stability',
+        description: 'Reduce vacancy duration and improve continuity of care.',
+      },
     ],
   },
 
-  impact: {
-    headline: 'Measured impact across your organisation',
-    columns: [
-      {
-        title: 'Financial',
-        items: [
-          '20–40%+ reduction in agency spend',
-          'Lower cost per role',
-          'Improved workforce utilisation',
-          'Reduced dependency on agency staff through faster access to pre-qualified candidates',
-        ],
-      },
-      {
-        title: 'Operational',
-        items: ['<48h time-to-interview', '100% CV processing', 'Reduced vacancy duration'],
-      },
-      {
-        title: 'Workforce',
-        items: [
-          'More stable staffing',
-          'Reduced dependency on agency staff',
-          'Improved consistency of service delivery',
-        ],
-      },
-    ],
-    closingLine:
-      'When workforce supply is continuous, agency reliance becomes avoidable — not inevitable',
-    link: { label: 'See full impact', to: '/impact' },
-  },
-
-  transformation: {
-    headline: 'From reactive hiring to workforce control',
-    stages: [
-      'Accelerate',
-      'Standardise',
-      'Build Pipeline',
-      'Reuse',
-      'Reduce Agency Reliance',
-      'Plan',
-      'Control',
-    ],
-    supportingLine:
-      'Move from reactive hiring to a system where a continuous pipeline of candidates is always available',
-    closingLine: 'Hiring shifts from sourcing candidates to activating an existing workforce supply',
-    links: [
-      { label: 'Explore transformation', to: '/solution' },
-      { label: 'See outcomes', to: '/impact' },
-    ],
-  },
-
+  // ─── 7. Proof ─────────────────────────────────────────────────────────────
   proof: {
-    headline: 'Proven performance in live environments',
+    headline: 'Proven Impact',
     metrics: [
-      { value: '<48 hours', label: 'to interview' },
-      { value: '100%', label: 'CV coverage' },
-      { value: '95%', label: 'interview attendance' },
-      { value: '≥5 days', label: 'reduction in time-to-fill' },
+      { value: '<48 hours', label: 'time-to-hire' },
+      { value: '3–5×', label: 'increase in recruiter capacity' },
+      { value: 'Reduced', label: 'agency staffing reliance' },
     ],
+    disclaimer: 'Based on pilot deployments and operational modelling',
+    link: { label: 'See full impact data', to: '/impact' },
   },
 
-  pilot: {
-    headline: 'Start with a controlled, low-risk pilot',
-    points: [
-      '4–6 week deployment',
-      'Live environment',
-      'Measurable KPIs',
-      'No system replacement',
-      'Creation of a reusable pipeline of pre-qualified candidates',
-    ],
-    supportingLine:
-      'Validate how continuous candidate pipelines reduce time-to-hire and agency reliance in your environment',
-    cta: { label: 'Start Pilot Deployment', to: '/pilot', variant: 'primary' as const },
-  },
-
+  // ─── 8. Final CTA ─────────────────────────────────────────────────────────
   finalCta: {
-    headline: 'See how this works in your organisation',
-    subtext:
-      'Walk through your current hiring workflow and identify where delays and cost can be removed',
+    headline: 'Start Controlling Your Workforce',
+    subtext: 'Run a structured evaluation tailored to your organisation.',
     ctas: [
-      { label: 'Book a Live Demo', to: '/demo', variant: 'primary' as const },
-      { label: 'Start Pilot Deployment', to: '/pilot', variant: 'outline' as const },
+      { label: 'Start Pilot', to: '/pilot', variant: 'primary' as const },
     ],
   },
 }
