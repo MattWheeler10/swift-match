@@ -430,7 +430,8 @@ watch(mobileOpen, (open) => {
     -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
     gap: $space-6;
-    z-index: -1;
+    z-index: $z-overlay;
+    pointer-events: auto;
 
     @media (max-width: 960px) {
       display: flex;
